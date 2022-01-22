@@ -27,10 +27,12 @@ export class AuthenticationFormComponent implements OnInit {
 
   logIn(event: any) {
     this.valueResponse.emit(this.loginForm.value);
+    this.loginForm.reset();
   }
 
   signUp(event: any) {
     this.valueResponse.emit(this.signupForm.value);
+    this.signupForm.reset();
   }
 
   navigateTerms() {

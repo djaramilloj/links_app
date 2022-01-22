@@ -15,6 +15,7 @@ export class SignupComponent implements OnInit {
   public origin: string;
   public loading: boolean = false;
   public successRegister: boolean = false;
+  public failedRegister: boolean = false;
   
   constructor(
     private router: Router,
@@ -52,7 +53,10 @@ export class SignupComponent implements OnInit {
       }
     } catch (error) {
       this.loading = false;
-      console.log(error)
+      this.failedRegister = true;
+      setTimeout(() => {
+        this.failedRegister = false;
+      }, 4000);
     }
   }
 

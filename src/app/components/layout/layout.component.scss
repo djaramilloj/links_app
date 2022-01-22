@@ -1,0 +1,20 @@
+@import './src/styles/mixins/common';
+
+.main-container {
+  @include complete-position();
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 200px auto;
+}
+.links-navbar {
+  grid-row: 1 / 2;
+  @include flex-center();
+  justify-content: space-between;
+  padding: 0 50px;
+}
+.links-body {
+  grid-row: 2 / 3;
+}
+#logout-btn {
+  @include custom-width-height(168px, 64px);
+}

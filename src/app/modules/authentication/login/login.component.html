@@ -1,3 +1,9 @@
+<div
+  class="alert alert-danger" 
+  role="alert" 
+  *ngIf="failedLogin">
+  {{ errorMessage ? 'User not registered' : 'Oops, something happened while Logging you in'}}
+</div>
 <section class="flex-center main-container">
   <button 
     type="button" 

@@ -13,6 +13,8 @@ export class LoginComponent implements OnInit {
 
   public origin: string;
   public loading: boolean = false;
+  public failedLogin: boolean = false;
+  public errorMessage: string | null = null;
 
   constructor(
     private router: Router,
@@ -34,19 +36,27 @@ export class LoginComponent implements OnInit {
   async loginUser(userInput: Login) {
     this.loading = true;
     try {
+      const userId: number = parseInt(localStorage.getItem('userId'));
+      if (!userId) {
+        this.errorMessage = 'User not registered';
+        throw new Error('User not registered');
+      }
       if (userInput.email && userInput.password) {
         const response: {token: string} = await this.authenticationService.loginUser(userInput);
         if (response?.token) {
           localStorage.setItem('userToken', response.token);
           this.loading = false;
-          // Navigate Home
+          this.router.navigate(['/']);
         }
       } else {
         throw new Error('Incomplete data to login user');
       }
     } catch (error) {
       this.loading = false;
-      console.log(error)
+      this.failedLogin = true;
+      setTimeout(() => {
+        this.failedLogin = false;
+      }, 5000);
     }
   }
 

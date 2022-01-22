@@ -1,5 +1,9 @@
-<div class="alert alert-success" role="alert" *ngIf="successRegister">
-  Successfully Registration
+<div 
+  [ngClass]="{'alert-success': successRegister, 'alert-danger': failedRegister}"
+  class="alert" 
+  role="alert" 
+  *ngIf="successRegister || failedRegister">
+  {{successRegister ? 'Successfully Registration' : 'Oops, something happened while registering you'}}
 </div>
 <section class="flex-center main-container">
   <button 

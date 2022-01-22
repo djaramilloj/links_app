@@ -6,10 +6,13 @@ import { AppComponent } from './app.component';
 import { ComponentsModule } from './components/components.module';
 import { BootstrapModule } from './bootstrap.module';
 import { HttpClientModule } from '@angular/common/http';
+import { LayoutComponent } from './components/layout/layout.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -18,7 +21,6 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     BootstrapModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

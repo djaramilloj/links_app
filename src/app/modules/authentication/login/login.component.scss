@@ -4,6 +4,9 @@
   flex-direction: column;
   @include complete-position();
 }
+.alert {
+  z-index: 1 !important;
+}
 #signup-btn {
   position: absolute;
   top: 50px;
