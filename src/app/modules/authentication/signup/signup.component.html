@@ -1,0 +1,18 @@
+<div class="alert alert-success" role="alert" *ngIf="successRegister">
+  Successfully Registration
+</div>
+<section class="flex-center main-container">
+  <button 
+    type="button" 
+    class="btn btn-outline-primary" 
+    id="login-btn"
+    (click)="navigateLogin()">
+      LOGIN
+  </button>
+  <img src="../../../../assets/images/logo.png" alt="Links Logo">
+  <app-authentication-form 
+    [origin]="origin"
+    [loading]="loading"
+    (valueResponse)="registerUser($event)">
+  </app-authentication-form>
+</section>

@@ -1,0 +1,63 @@
+<section 
+  [ngClass]="{'main-container__login': origin === 'login', 'main-container__signup': origin === 'signup'}"
+  class="flex-center main-container">
+  <h3 id="form-title">{{origin | titlecase}}</h3>
+  <form 
+    *ngIf="origin === 'login'"
+    class="form-container"
+    [formGroup]="loginForm" 
+    (ngSubmit)="logIn($event)">
+    <div class="form-group">
+      <label>Your email</label>
+      <input type="email" class="form-control" formControlName="email">
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" class="form-control" formControlName="password">
+      <small class="form-text text-muted">Minimum 8 characters, one upper case character, one lower case character and one special character (#?!@$%^&*-)</small>
+    </div>
+    <button 
+      type="submit" 
+      class="btn btn-primary" 
+      id="submission-btn"
+      [disabled]="!loginForm.valid">
+        <div class="spinner-border" role="status" *ngIf="loading">
+          <span class="sr-only">Loading...</span>
+        </div>
+        {{ !loading ? 'Login' : null }}
+    </button>
+  </form>
+
+  <form 
+    *ngIf="origin === 'signup'"
+    class="form-container"
+    [formGroup]="signupForm" 
+    (ngSubmit)="signUp($event)">
+    <div class="form-group">
+      <label>Full Name</label>
+      <input type="text" class="form-control" formControlName="name">
+    </div>
+    <div class="form-group">
+      <label>Your email</label>
+      <input type="email" class="form-control" formControlName="email">
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" class="form-control" formControlName="password">
+      <small class="form-text text-muted">Minimum 8 characters, one upper case character, one lower case character and one special character (#?!@$%^&*-)</small>
+    </div>
+    <button 
+      type="submit" 
+      class="btn btn-primary" 
+      id="submission-btn"
+      [disabled]="!signupForm.valid">
+      <div class="spinner-border" role="status" *ngIf="loading">
+        <span class="sr-only">Loading...</span>
+      </div>
+      {{ !loading ? 'Signup' : null }}
+    </button>
+    <small 
+      id="terms-conditions-text"
+      class="form-text text-muted">By Creating account You agree to the <span (click)="navigateTerms()">Terms of use</span> and <span (click)="navigateTerms()">Privacy Polycy</span></small>
+  </form>
+</section>

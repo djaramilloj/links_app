@@ -1,0 +1,15 @@
+@import './src/styles/mixins/common';
+
+.main-container {
+  flex-direction: column;
+  @include complete-position();
+}
+.alert {
+  z-index: 1 !important;
+}
+#login-btn {
+  position: absolute;
+  top: 50px;
+  right: 110px;
+  @include custom-width-height(168px, 64px);
+}

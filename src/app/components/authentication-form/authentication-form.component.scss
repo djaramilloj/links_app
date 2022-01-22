@@ -1,0 +1,42 @@
+@import './src/styles/mixins/common';
+
+.main-container {
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  box-shadow: 0px 0px 30px rgba(199, 199, 199, 0.55);
+  border-radius: 6px; 
+  padding: 56px 32px;
+  &__login {
+    @include custom-width-height(560px, 494px);
+  }
+  &__signup {
+    @include custom-width-height(560px, 610px);
+  }
+}
+.form-control {
+  height: 64px;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+#form-title {
+  font-weight: 700;
+}
+#submission-btn {
+  @include custom-width-height(336px, 48px);
+  align-self: center;
+}
+#terms-conditions-text {
+  font-weight: 400;
+  color: black !important;
+  text-align: center;
+  align-self: center;
+  margin-top: 18px;
+  width: 280px;
+  span {
+    color: #047AFF;
+    cursor: pointer;
+  }
+}

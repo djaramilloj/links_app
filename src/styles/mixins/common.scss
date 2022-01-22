@@ -1,0 +1,15 @@
+@mixin complete-position() {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin custom-width-height($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
