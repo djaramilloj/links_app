@@ -1,0 +1,27 @@
+@import './src/styles/mixins/common';
+
+.main-container {
+  @include complete-position();
+  display: grid;
+  grid-template-columns: 336px auto;
+  padding: 10px 80px 0 40px;
+}
+.userinfo-container {
+  grid-column: 1 / 2;
+}
+.links-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 48px;
+  grid-column: 2 / 3;
+  &__form {
+    width: 100%;
+  }
+  &__list {
+    width: 100%;
+    padding: 0px 5px;
+    overflow-y: auto;
+    height: 100%;
+  }
+}

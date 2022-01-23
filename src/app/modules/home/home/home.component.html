@@ -1,1 +1,23 @@
-<p>home works!</p>
+<div
+  class="alert alert-danger" 
+  role="alert" 
+  *ngIf="linkCreationFailed">
+  Oops, something happened while saving/deleting your link
+</div>
+<section class="main-container">
+  <app-user-profile class="userinfo-container" [userInfo]="userInfo"></app-user-profile>
+  <div class="links-container">
+    <app-links-form 
+      class="links-container__form" 
+      [loading]="linkCreationLoading"
+      (valueResponse)="addLink($event)">
+    </app-links-form>
+    <div class="links-container__list">
+      <app-link-item 
+        class="links-container__list__item" 
+        [links]="linksList"
+        (valueResponseList)="deleteLink($event)">
+      </app-link-item>
+    </div>
+  </div>
+</section>

@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 // Models
 import { Signup } from '../../../models/Authentication.model';
 //Services
-import { AuthenticationService } from '../../../services/authentication.service';
+import { AuthenticationService } from '../../../services/authentication/authentication.service';
 
 @Component({
   selector: 'app-signup',

@@ -6,7 +6,7 @@ import { ComponentsModule } from 'src/app/components/components.module';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 
-import { AuthenticationService } from 'src/app/services/authentication.service';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 
 
 @NgModule({
