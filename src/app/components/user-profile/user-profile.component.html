@@ -1,0 +1,8 @@
+<section *ngIf="userInfo" class="flex-center main-container">
+  <img
+    id="profile-pic" 
+    [src]="userInfo.avatar" 
+    alt="profile pic">
+  <p class="main-container__text">{{userInfo.name}}</p>
+  <p class="main-container__text">{{userInfo.email}}</p>
+</section>

@@ -1,0 +1,24 @@
+<section class="flex-center main-container">
+  <form 
+    [formGroup]="linksForm" 
+    (ngSubmit)="addLink($event)">
+    <div class="form-group">
+      <label>Url to save</label>
+      <input type="text" class="form-control" formControlName="url">
+    </div>
+    <div class="form-group">
+      <label>Name of Url</label>
+      <input type="text" class="form-control" formControlName="name">
+    </div>
+    <button 
+      type="submit" 
+      class="btn btn-primary" 
+      id="link-btn"
+      [disabled]="!linksForm.valid">
+      <div class="spinner-border" role="status" *ngIf="loading">
+        <span class="sr-only">Loading...</span>
+      </div>
+      {{ !loading ? 'ADD' : null }}
+    </button>
+  </form>
+</section>

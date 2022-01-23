@@ -1,0 +1,12 @@
+<section class="main-container" *ngFor="let link of links; let i = index">
+  <div class="text-container">
+    <h3 class="text-container__title">{{link.url}}</h3>
+    <p class="text-container__description">{{link.name}}</p>
+  </div>
+  <div class="icon-container">
+    <img 
+      src="../../../assets/icons/trash.png" 
+      alt="trash icon"
+      (click)="deleteLink(link, i)">
+  </div>
+</section>
